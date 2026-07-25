@@ -1,0 +1,1449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="google-site-verification" content="w59f74jeYxs8XJv0nFIi5xwV5UFYv6h5LMnd546u81M" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blox Fruits Mod Menu 2026: The Ultimate Roblox MM2 Mod Menu & Bloxfruits Mod Panel</title>
+  <meta name="description" content="Master Blox Fruits 2026! 🚀 Get the best blox fruits mod menu, bloxfruits mod panel, and menu roblox to unlock all fruits safely. Try the ultimate roblox mm2 mod menu!">
+  
+  <link rel="icon" type="image/png" href="https://i.postimg.cc/xCJnF6qG/image.png">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%);
+      color: #fff;
+      font-family: 'Poppins', sans-serif;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+    
+    /* === GLOBAL IMAGE OPTIMIZATION === */
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* Mobile Menu Button */
+    .mobile-menu-btn {
+      display: none;
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      z-index: 1000;
+      background: linear-gradient(135deg, #ff9a00, #ffd700);
+      border: none;
+      border-radius: 8px;
+      padding: 12px;
+      color: #000;
+      font-size: 1.2rem;
+      cursor: pointer;
+      box-shadow: 0 4px 15px rgba(255, 204, 0, 0.4);
+    }
+    
+    /* Sidebar styling */
+    .sidebar {
+      width: 260px;
+      background: linear-gradient(180deg, #16213e 0%, #0f1419 100%);
+      padding: 25px 18px;
+      box-shadow: 5px 0 20px rgba(0, 0, 0, 0.6);
+      display: flex;
+      flex-direction: column;
+      position: fixed;
+      height: 100vh;
+      overflow-y: auto;
+      z-index: 100;
+      transition: transform 0.3s ease;
+    }
+    
+    .logo-container {
+      text-align: center;
+      margin-bottom: 30px;
+      padding-bottom: 20px;
+      border-bottom: 2px solid rgba(255, 204, 0, 0.2);
+    }
+    
+    .logo-img {
+      max-width: 180px;
+      margin: 0 auto 10px;
+    }
+    
+    .logo-subtitle {
+      color: #ffd700;
+      font-size: 0.85rem;
+      font-weight: 400;
+      opacity: 0.9;
+    }
+    
+    .sidebar-content {
+      flex-grow: 1;
+    }
+    
+    .sidebar h3 {
+      font-size: 1rem;
+      color: #ffd700;
+      margin-bottom: 15px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    
+    .sidebar-features {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 25px 0;
+    }
+    
+    .sidebar-features li {
+      padding: 10px 12px;
+      margin-bottom: 8px;
+      background: rgba(255, 204, 0, 0.08);
+      border-radius: 6px;
+      border-left: 3px solid #ffd700;
+      font-size: 0.85rem;
+      transition: all 0.3s;
+      cursor: pointer;
+    }
+    
+    .sidebar-features li:hover {
+      background: rgba(255, 204, 0, 0.15);
+      transform: translateX(5px);
+    }
+    
+    .sidebar-features li i {
+      color: #ffd700;
+      margin-right: 10px;
+      font-size: 0.9rem;
+    }
+    
+    .sidebar-footer {
+      margin-top: auto;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      text-align: center;
+      color: #888;
+      font-size: 0.75rem;
+    }
+    
+    .stats-box {
+      background: rgba(255, 204, 0, 0.1);
+      padding: 12px;
+      border-radius: 8px;
+      margin-top: 15px;
+      text-align: center;
+    }
+    
+    .stats-box .stat-number {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #ffd700;
+    }
+    
+    .stats-box .stat-label {
+      font-size: 0.75rem;
+      color: #aaa;
+    }
+    
+    /* Main content styling */
+    .main-content {
+      margin-left: 260px;
+      padding: 40px 50px;
+      max-width: 1400px;
+      transition: margin-left 0.3s ease;
+    }
+    
+    /* Mobile Features Grid */
+    .mobile-features-grid {
+      display: none;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+      margin: 20px 0;
+    }
+    
+    .mobile-feature-card {
+      background: linear-gradient(145deg, #1e2a3a, #151b26);
+      padding: 15px;
+      border-radius: 10px;
+      text-align: center;
+      border: 2px solid rgba(255, 215, 0, 0.3);
+    }
+    
+    .mobile-feature-card i {
+      font-size: 1.5rem;
+      color: #ffd700;
+      margin-bottom: 8px;
+    }
+    
+    .mobile-feature-card h4 {
+      font-size: 0.8rem;
+      color: #fff;
+      margin-bottom: 5px;
+      font-weight: 600;
+    }
+    
+    /* Hero Section */
+    .hero-section {
+      text-align: center;
+      margin-bottom: 50px;
+      padding: 30px 0;
+    }
+    
+    .page-title {
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+      background: linear-gradient(135deg, #ff9a00, #ffd700);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-weight: 800;
+      letter-spacing: 1px;
+    }
+    
+    .page-subtitle {
+      font-size: 1.1rem;
+      color: #ffd700;
+      margin-bottom: 20px;
+      font-weight: 500;
+    }
+    
+    .description {
+      max-width: 850px;
+      margin: 0 auto 30px;
+      color: #bbb;
+      font-size: 1rem;
+      line-height: 1.8;
+      text-align: left;
+    }
+    
+    .description strong {
+      color: #ffd700;
+    }
+
+    /* === OPTIMIZED HERO CAROUSEL === */
+    .hero-image {
+      max-width: 800px; 
+      width: 100%;
+      margin: 0 auto 30px;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+      border: 3px solid rgba(255, 215, 0, 0.3);
+      position: relative;
+      /* Force 16:9 Aspect Ratio on the container */
+      aspect-ratio: 16/9;
+    }
+    
+    .hero-image .carousel-inner,
+    .hero-image .carousel-item {
+      height: 100%;
+    }
+
+    /* Ensure all hero images are consistent */
+    .hero-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover; /* This makes sure they fill the box perfectly */
+    }
+    
+    /* Standard Carousel Arrow Styling */
+    .carousel-control-prev,
+    .carousel-control-next {
+      width: 10%;
+      opacity: 0.7;
+    }
+    .carousel-control-prev:hover,
+    .carousel-control-next:hover {
+      opacity: 1;
+    }
+    .carousel-control-prev-icon, 
+    .carousel-control-next-icon {
+      background-color: rgba(0, 0, 0, 0.5); 
+      border-radius: 50%;
+      padding: 20px;
+      background-size: 50% 50%;
+    }
+
+    /* === OPTIMIZED DOWNLOAD CAROUSEL (Mini) === */
+    #downloadCarousel {
+       border-radius: 10px;
+       overflow: hidden; 
+       border: 1px solid rgba(255,215,0,0.2);
+       margin: 15px 0 20px 0;
+       /* Force 16:9 Aspect Ratio here too */
+       aspect-ratio: 16/9;
+    }
+
+    #downloadCarousel .carousel-inner,
+    #downloadCarousel .carousel-item {
+      height: 100%;
+    }
+
+    #downloadCarousel img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover; /* Uniform cropping */
+    }
+
+    /* Small arrows for the mini carousel */
+    #downloadCarousel .carousel-control-prev-icon, 
+    #downloadCarousel .carousel-control-next-icon {
+      padding: 12px !important;
+      background-size: 60% 60% !important;
+    }
+    
+    /* Feature Highlights */
+    .feature-highlights {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      margin: 40px 0;
+    }
+    
+    .feature-box {
+      background: linear-gradient(145deg, #1e2a3a, #151b26);
+      padding: 20px;
+      border-radius: 12px;
+      text-align: center;
+      border: 2px solid transparent;
+      transition: all 0.3s;
+    }
+    
+    .feature-box:hover {
+      border-color: #ffd700;
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(255, 215, 0, 0.2);
+    }
+    
+    .feature-box i {
+      font-size: 2.5rem;
+      color: #ffd700;
+      margin-bottom: 15px;
+    }
+    
+    .feature-box h4 {
+      font-size: 1rem;
+      color: #fff;
+      margin-bottom: 8px;
+      font-weight: 600;
+    }
+    
+    .feature-box p {
+      font-size: 0.85rem;
+      color: #aaa;
+      margin: 0;
+    }
+    
+    /* Section Title */
+    .section-title {
+      font-size: 1.8rem;
+      margin: 50px 0 30px;
+      color: #ffd700;
+      text-align: center;
+      font-weight: 700;
+      position: relative;
+    }
+    
+    .section-title:after {
+      content: '';
+      display: block;
+      width: 80px;
+      height: 3px;
+      background: linear-gradient(90deg, #ff9a00, #ffd700);
+      margin: 12px auto 0;
+      border-radius: 2px;
+    }
+    
+    /* Fruit Grid */
+    .fruit-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      gap: 20px;
+      padding: 20px 0;
+    }
+    
+    .fruit-card {
+      background: linear-gradient(145deg, #1e2a3a, #151b26);
+      border: 2px solid transparent;
+      border-radius: 12px;
+      padding: 12px;
+      transition: all 0.3s;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+      cursor: pointer;
+    }
+    
+    .fruit-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 30px rgba(255, 204, 0, 0.3);
+      border-color: currentColor;
+    }
+    
+    .fruit-card p {
+      margin: 0;
+      font-weight: 600;
+      color: #fff;
+      font-size: 0.95rem;
+      text-align: center;
+    }
+
+    /* Consistent Fruit Images */
+    .fruit-card img {
+      width: 100%;
+      border-radius: 8px;
+      aspect-ratio: 1/1; /* Keeps them perfectly square */
+      object-fit: cover;
+      margin-bottom: 10px;
+    }
+
+    /* === OFFERS SECTION === */
+    .offers-container {
+      margin: 30px 0 40px;
+      padding: 0; 
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
+      align-items: stretch;
+    }
+
+    .offer-card {
+      flex-basis: 100%; 
+      max-width: 49%; 
+      padding: 30px;
+      background: linear-gradient(145deg, #1e2a3a, #151b26);
+      border-radius: 15px;
+      box-sizing: border-box;
+      border: 2px solid transparent;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+      transition: all 0.4s ease;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Mod Download Card */
+    .mod-download-card {
+        border-color: rgba(255, 215, 0, 0.3); 
+        box-shadow: 0 0 5px rgba(255, 215, 0, 0.1);
+    }
+    .mod-download-card:hover {
+        border-color: #ffd700;
+        box-shadow: 0 0 15px rgba(255, 215, 0, 0.7);
+        transform: translateY(-3px);
+    }
+    .mod-download-card h3 {
+      font-size: 1.8rem;
+      color: #ffd700;
+      margin-bottom: 15px;
+      font-weight: 700;
+    }
+    
+    /* Medal Promotion Card */
+    .medal-promotion-card {
+        border-color: rgba(255, 255, 255, 0.4) !important; 
+        box-shadow: 0 0 5px rgba(255, 255, 255, 0.1);
+    }
+    .medal-promotion-card:hover {
+        border-color: #fff;
+        box-shadow: 0 0 20px rgba(255, 255, 255, 0.8), 0 0 30px rgba(255, 255, 255, 0.4); 
+        transform: translateY(-3px);
+    }
+
+    .medal-promotion-card h3 {
+        font-size: 1.8rem;
+        color: #fff; 
+        margin-bottom: 20px;
+        font-weight: 700;
+    }
+    
+    .medal-promotion-card .btn-download {
+        background: linear-gradient(135deg, #888, #bbb) !important; 
+        box-shadow: 0 8px 25px rgba(255, 255, 255, 0.4) !important;
+        color: #0a0a0a !important; 
+        margin-top: auto; 
+    }
+    .medal-promotion-card .btn-download:hover {
+        background: linear-gradient(135deg, #bbb, #ddd) !important;
+        box-shadow: 0 12px 35px rgba(255, 255, 255, 0.6) !important;
+    }
+
+    .medal-content-flex {
+        display: flex;
+        flex-direction: column; 
+        align-items: center;
+        gap: 20px;
+        text-align: left;
+        flex-grow: 1; 
+    }
+
+    .medal-image-container {
+        width: 100%;
+        max-width: 300px;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    }
+
+    .medal-steps {
+        width: 100%;
+        text-align: center; 
+    }
+    
+    .medal-steps h4 {
+        color: #fff;
+        font-weight: 600;
+        font-size: 1.1rem;
+        margin-bottom: 10px;
+        text-align: center;
+    }
+
+    .medal-list {
+        list-style: none;
+        padding: 0 0 15px 0;
+        margin: 0 auto;
+        max-width: 300px;
+        text-align: left; 
+    }
+
+    .medal-list li {
+        color: #fff;
+        margin-bottom: 8px;
+        font-size: 0.95rem;
+        font-weight: 400;
+    }
+
+    .medal-list li i {
+        color: #fff; 
+        margin-right: 10px;
+        font-size: 1.1rem;
+    }
+
+    .medal-coin-icon {
+        width: 24px;
+        height: 24px;
+        vertical-align: middle;
+        margin-right: 10px;
+        filter: grayscale(100%);
+    }
+    
+    .medal-promotion-card .btn-download .download-text {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .btn-download {
+      background: linear-gradient(135deg, #ff9a00, #ffd700);
+      color: #000;
+      font-weight: 700;
+      padding: 16px 45px;
+      border: none;
+      border-radius: 50px;
+      box-shadow: 0 8px 25px rgba(255, 204, 0, 0.4);
+      transition: all 0.3s;
+      font-size: 1.1rem;
+      text-decoration: none;
+      display: inline-block;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .btn-download:hover {
+      transform: scale(1.05);
+      background: linear-gradient(135deg, #ffd700, #ff9a00);
+      box-shadow: 0 12px 35px rgba(255, 204, 0, 0.6);
+      color: #000;
+    }
+    
+    .btn-download i {
+      margin-right: 10px;
+    }
+    
+    /* Animation classes */
+    .btn-download.animating { pointer-events: none; }
+    .btn-download.animating .download-text { opacity: 0; }
+    .btn-download.animating::after {
+      content: '';
+      position: absolute;
+      top: 50%; left: 50%;
+      width: 30px; height: 30px;
+      margin-top: -15px; margin-left: -15px;
+      border: 3px solid transparent; border-top-color: #000;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+    
+    .btn-download.completed { background: linear-gradient(135deg, #00ff6a, #00cc55); }
+    .btn-download.completed .download-text { opacity: 1; }
+    .btn-download.completed::after {
+      content: '\f00c';
+      font-family: 'Font Awesome 5 Free'; font-weight: 900;
+      position: absolute; top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      color: #000; font-size: 1.2rem;
+      animation: none;
+    }
+
+    /* Progress bar */
+    .progress-container {
+      width: 100%;
+      max-width: 400px;
+      background: rgba(0, 0, 0, 0.2);
+      border-radius: 10px;
+      margin: 20px auto 0;
+      padding: 5px;
+    }
+
+    .progress-bar {
+      width: 0%;
+      height: 25px;
+      background: linear-gradient(135deg, #ff9a00, #ffd700);
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      transition: width 0.3s ease;
+    }
+
+    .progress-text {
+      color: #000; font-weight: 700; font-size: 0.9rem;
+    }
+    
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    
+    /* Info Section */
+    .info-section {
+      background: rgba(255, 255, 255, 0.03);
+      padding: 30px;
+      border-radius: 12px;
+      margin-top: 40px;
+      border-left: 4px solid #ffd700;
+    }
+    
+    .info-section h4 {
+      color: #ffd700; margin-bottom: 15px;
+      font-size: 1.2rem; font-weight: 600;
+    }
+    
+    .info-section p {
+      color: #bbb; line-height: 1.8;
+      margin-bottom: 10px; font-size: 0.95rem;
+    }
+    
+    /* Mobile Logo */
+    .mobile-logo {
+      display: none;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    
+    .mobile-logo-img {
+      max-width: 150px; height: auto;
+      margin: 0 auto;
+    }
+    
+    /* === RESPONSIVE BREAKPOINTS === */
+    @media (max-width: 1200px) {
+      .main-content { padding: 35px 40px; }
+      .fruit-grid { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); }
+    }
+    
+    @media (max-width: 992px) {
+      .mobile-menu-btn { display: block; }
+      .sidebar {
+        transform: translateX(-100%);
+        position: fixed; top: 0; left: 0; height: 100%; z-index: 1000;
+      }
+      .sidebar.active { transform: translateX(0); }
+      .main-content {
+        margin-left: 0; padding: 80px 25px 30px; width: 100%;
+      }
+      .mobile-logo { display: block; }
+      .mobile-features-grid { display: grid; }
+      .fruit-grid {
+        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+        gap: 15px;
+      }
+      .page-title { font-size: 2.2rem; }
+      .hero-image { max-width: 90%; }
+      .feature-highlights { grid-template-columns: repeat(2, 1fr); }
+      .logo-img { max-width: 160px; }
+    }
+    
+    @media (max-width: 768px) {
+      .main-content { padding: 80px 20px 25px; }
+      .page-title { font-size: 2rem; }
+      .section-title { font-size: 1.6rem; }
+      
+      /* Stack offers vertically */
+      .offers-container { gap: 30px; }
+      .offer-card { max-width: 100%; }
+      
+      .btn-download { padding: 14px 35px; font-size: 1rem; }
+      .feature-highlights { grid-template-columns: 1fr; gap: 15px; }
+      .info-section { padding: 20px; }
+      .mobile-features-grid {
+        grid-template-columns: repeat(2, 1fr); gap: 12px;
+      }
+    }
+    
+    @media (max-width: 576px) {
+      .fruit-grid {
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+        gap: 12px;
+      }
+      .page-title { font-size: 1.8rem; }
+      .main-content { padding: 80px 15px 20px; }
+      .hero-section { margin-bottom: 30px; padding: 20px 0; }
+      .hero-image { max-width: 100%; margin-bottom: 20px; }
+      .description { font-size: 0.95rem; margin-bottom: 20px; }
+      .offer-card { padding: 25px 20px; margin: 0; }
+      .mod-download-card h3, .medal-promotion-card h3 { font-size: 1.4rem; }
+      .btn-download {
+        padding: 12px 30px; font-size: 0.95rem;
+        width: 100%; max-width: 280px;
+        /* Center the button on mobile */
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .section-title { font-size: 1.4rem; margin: 40px 0 25px; }
+      .sidebar-features li { padding: 8px 10px; font-size: 0.8rem; }
+      .logo-img { max-width: 140px; }
+      .mobile-logo-img { max-width: 120px; }
+      .mobile-features-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+      .mobile-feature-card { padding: 12px 8px; }
+      .mobile-feature-card i { font-size: 1.3rem; }
+      .mobile-feature-card h4 { font-size: 0.75rem; }
+      .progress-container { max-width: 280px; }
+    }
+    
+    @media (max-width: 400px) {
+      .fruit-grid { grid-template-columns: repeat(2, 1fr); }
+      .page-title { font-size: 1.6rem; }
+      .page-subtitle { font-size: 1rem; }
+      .mobile-features-grid { grid-template-columns: 1fr; }
+    }
+
+    /* Dragon Fruit Section - Optimized */
+    .dragon-fruit-section {
+      margin: 40px 0;
+      padding: 30px;
+      background: linear-gradient(145deg, #1e2a3a, #151b26);
+      border-radius: 15px;
+      border: 2px solid #ffaa00;
+      animation: glowing-border 2s infinite;
+    }
+
+    .dragon-fruit-card {
+      display: flex; align-items: center; gap: 30px;
+    }
+
+    .dragon-fruit-card img {
+      width: 100%;
+      max-width: 250px; /* Responsive max width */
+      aspect-ratio: 1/1; /* Square shape */
+      object-fit: cover;
+      border-radius: 12px;
+      border: 3px solid #ffaa00;
+    }
+
+    .dragon-fruit-description h3 {
+      font-size: 1.8rem; color: #ffaa00;
+      margin-bottom: 15px; font-weight: 700;
+    }
+
+    .dragon-fruit-description p {
+      font-size: 1.1rem; color: #bbb; line-height: 1.8;
+    }
+
+    @keyframes glowing-border {
+      0% { box-shadow: 0 0 10px #ffaa00; }
+      50% { box-shadow: 0 0 20px #ffaa00, 0 0 30px #ffaa00; }
+      100% { box-shadow: 0 0 10px #ffaa00; }
+    }
+
+    @media (max-width: 768px) {
+      .dragon-fruit-card { flex-direction: column; text-align: center; }
+      .dragon-fruit-card img { max-width: 180px; }
+      .dragon-fruit-description h3 { font-size: 1.5rem; }
+      .dragon-fruit-description p { font-size: 1rem; }
+    }
+    
+    /* Modal */
+    .modal {
+      display: none; position: fixed; z-index: 1001;
+      left: 0; top: 0; width: 100%; height: 100%;
+      overflow: auto; background-color: rgba(0,0,0,0.8);
+    }
+
+    .modal-content {
+      background-color: #1a1a2e;
+      margin: 10% auto; padding: 30px;
+      border: 1px solid #888;
+      width: 80%; max-width: 600px;
+      border-radius: 15px; text-align: center;
+      animation: zoomIn 0.3s; position: relative;
+    }
+
+    .close-button {
+      color: #aaa; position: absolute;
+      top: 15px; right: 25px;
+      font-size: 35px; font-weight: bold; cursor: pointer;
+    }
+    .close-button:hover, .close-button:focus {
+      color: #fff; text-decoration: none;
+    }
+
+    #modalFruitImage {
+      width: 150px; height: 150px;
+      object-fit: cover;
+      border-radius: 12px; border: 3px solid #ffd700;
+      margin-bottom: 20px;
+    }
+
+    #modalFruitName {
+      font-size: 1.8rem; color: #ffd700; margin-bottom: 15px;
+    }
+
+    #modalFruitDescription {
+      font-size: 1.1rem; color: #bbb; line-height: 1.8;
+    }
+
+    @keyframes zoomIn {
+      from {transform: scale(0)}
+      to {transform: scale(1)}
+    }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: #0a0a0a; }
+    ::-webkit-scrollbar-thumb { background: #ffd700; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: #ff9a00; }
+    
+    /* Overlay for mobile menu */
+    .sidebar-overlay {
+      display: none; position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.7); z-index: 999;
+    }
+    .sidebar-overlay.active { display: block; }
+    /* Article Section with Accordion */
+    .article-section {
+      background: rgba(255, 255, 255, 0.03);
+      padding: 40px;
+      border-radius: 15px;
+      margin-top: 50px;
+      border: 1px solid rgba(255, 215, 0, 0.1);
+      line-height: 1.8;
+      color: #ccc;
+    }
+
+    .article-section h2 {
+      color: #ffd700;
+      font-size: 2rem;
+      margin-bottom: 25px;
+      font-weight: 700;
+      text-align: center;
+    }
+
+    /* Accordion Styles */
+    .accordion-item {
+      border-bottom: 1px solid rgba(255, 215, 0, 0.1);
+      margin-bottom: 10px;
+    }
+
+    .accordion-header {
+      color: #ffd700;
+      font-size: 1.4rem;
+      margin: 0;
+      padding: 20px 0;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: color 0.3s;
+    }
+
+    .accordion-header:hover {
+      color: #ff9a00;
+    }
+
+    .accordion-header i {
+      font-size: 1.1rem;
+      transition: transform 0.3s ease;
+      color: #ffd700;
+    }
+
+    .accordion-item.active .accordion-header i {
+      transform: rotate(180deg);
+    }
+
+    .accordion-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease-out, padding 0.3s ease;
+      padding: 0;
+    }
+
+    .accordion-item.active .accordion-content {
+      max-height: 2000px; /* Large enough to fit content */
+      padding-bottom: 20px;
+      transition: max-height 0.6s ease-in, padding 0.3s ease;
+    }
+
+    .article-section p {
+      margin-bottom: 20px;
+      font-size: 1rem;
+    }
+
+    .article-section ul {
+      margin-bottom: 20px;
+      padding-left: 20px;
+    }
+
+    .article-section li {
+      margin-bottom: 10px;
+      list-style-type: none;
+      position: relative;
+      padding-left: 25px;
+    }
+
+    .article-section li::before {
+      content: '\f058';
+      font-family: 'Font Awesome 6 Free';
+      font-weight: 900;
+      position: absolute;
+      left: 0;
+      color: #ffd700;
+    }
+
+    .article-section .disclaimer {
+      font-size: 0.85rem;
+      color: #888;
+      font-style: italic;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      padding-top: 20px;
+      margin-top: 30px;
+    }
+
+    @media (max-width: 768px) {
+      .article-section {
+        padding: 25px;
+      }
+      .article-section h2 {
+        font-size: 1.6rem;
+      }
+      .accordion-header {
+        font-size: 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <button class="mobile-menu-btn" id="mobileMenuBtn">
+    <i class="fas fa-bars"></i>
+  </button>
+
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+  <div class="sidebar" id="sidebar">
+    <div class="logo-container">
+      <img src="https://i.postimg.cc/Qd1bqk1b/image.png" alt="Blox Fruits Mod Menu Logo" class="logo-img">
+      <div class="logo-subtitle"></div>
+    </div>
+    
+    <div class="sidebar-content">
+      <h3><i class="fas fa-star"></i> Key Features</h3>
+      <ul class="sidebar-features">
+        <li><i class="fas fa-check-circle"></i> All Fruits Unlocked</li>
+        <li><i class="fas fa-bolt"></i> Enhanced Powers</li>
+        <li><i class="fas fa-rocket"></i> Faster Mastery</li>
+        <li><i class="fas fa-magic"></i> Unique Abilities</li>
+        <li><i class="fas fa-infinity"></i> No Cooldowns</li>
+        <li><i class="fas fa-robot"></i> Auto-Farming Mode</li>
+        <li><i class="fas fa-shield-alt"></i> Anti-Ban Protection</li>
+        <li><i class="fas fa-sync"></i> Regular Updates</li>
+      </ul>
+      
+      <div class="stats-box">
+        <div class="stat-number">500K+</div>
+        <div class="stat-label">Active Users</div>
+      </div>
+    </div>
+    
+    <div class="sidebar-footer">
+      <p><i class="fas fa-code-branch"></i> Version 28</p>
+   
+      <p style="margin-top: 10px; color: #666;">© 2026 Blox fruit</p>
+    </div>
+  </div>
+
+  <div class="main-content" id="mainContent">
+    <div class="hero-section">
+      <div class="mobile-logo">
+        <img src="https://i.postimg.cc/Qd1bqk1b/image.png" alt="Blox Fruits Mod Menu Logo" class="mobile-logo-img">
+      </div>
+      <h1 class="page-title">Blox Fruits Mod Menu</h1>
+      <p class="page-subtitle">Unlock the Ultimate Blox Fruits Experience</p>
+      
+      <div class="mobile-features-grid">
+        <div class="mobile-feature-card">
+          <i class="fas fa-unlock-alt"></i>
+          <h4>All Fruits</h4>
+        </div>
+        <div class="mobile-feature-card">
+          <i class="fas fa-bolt"></i>
+          <h4>Enhanced Powers</h4>
+        </div>
+        <div class="mobile-feature-card">
+          <i class="fas fa-rocket"></i>
+          <h4>Fast Mastery</h4>
+        </div>
+        <div class="mobile-feature-card">
+          <i class="fas fa-shield-alt"></i>
+          <h4>Anti-Ban</h4>
+        </div>
+      </div>
+      
+      <div id="heroCarousel" class="carousel slide hero-image" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="https://i.postimg.cc/x8zMhDvP/Dragon-Hybrid-Form.webp" class="d-block w-100" alt="Slide 1">
+          </div>
+          <div class="carousel-item">
+            <img src="https://i.postimg.cc/W3QXh7SW/Blazing-Form.webp" class="d-block w-100" alt="Slide 2">
+          </div>
+          <div class="carousel-item">
+            <img src="https://i.postimg.cc/59gX9t0y/Kitsune-Transform.gif" class="d-block w-100" alt="Slide 3">
+          </div>
+          <div class="carousel-item">
+            <img src="https://i.postimg.cc/W3Bm8bB6/Dragon-East-C.webp" class="d-block w-100" alt="Slide 4">
+          </div>
+           <div class="carousel-item">
+            <img src="https://i.postimg.cc/fTG4dxqt/Dragon-West-C.gif" class="d-block w-100" alt="Slide 4">
+          </div>
+           <div class="carousel-item">
+            <img src="https://i.postimg.cc/T3WF0p52/Gas-Transformed-Idle.gif" class="d-block w-100" alt="Slide 5">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+      
+      <div class="description">
+        <p>
+          Welcome to <strong>Blox Fruits Mod Menu</strong>, the most advanced and comprehensive menu roblox for Blox Fruits enthusiasts. Our cutting-edge modification tool grants you instant access to <strong>all premium fruits</strong>, enhanced abilities, and exclusive features that transform your gameplay experience.
+        </p>
+        <p style="margin-top: 15px;">
+          Whether you're a seasoned player looking to maximize your potential or a newcomer eager to explore every fruit's unique powers,This bloxfruits mod panel delivers unparalleled performance, security, and ease of use. With over <strong>500,000 active users</strong> worldwide, we're the trusted choice for Blox Fruits modifications.
+        </p>
+      </div>
+
+      <div class="offers-container">
+          
+          <div class="offer-card mod-download-card">
+              <h3>Ready to Transform Your Gameplay?</h3>
+              <p>Download Blox Fruits Mod Menu now and unlock unlimited possibilities!</p>
+              
+              <div id="downloadCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img src="https://i.postimg.cc/RVcFPF3L/image.png" class="d-block w-100" alt="Preview 1">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="https://i.postimg.cc/Fzdc6QMB/image.png" class="d-block w-100" alt="Preview 2">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="https://i.postimg.cc/VNft8Myq/image.png" class="d-block w-100" alt="Preview 3">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="https://i.postimg.cc/bYs5QCC1/image.png" class="d-block w-100" alt="Preview 4">
+                  </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#downloadCarousel" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#downloadCarousel" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
+
+              <a href="https://redirectapps.online/cl/i/pqomvn" class="btn-download" id="downloadBtn" target="_self">
+                  <span class="download-text"><i class="fas fa-download"></i> Download Mod Menu</span>
+              </a>
+              <p style="margin-top: 20px; font-size: 0.85rem; color: #888;">
+                  <i class="fas fa-info-circle"></i> File size: 165MB | Free to use
+              </p>
+              <div class="progress-container" id="progressContainer" style="display: none; margin-top: 20px;">
+                  <div class="progress-bar" id="progressBar">
+                      <span class="progress-text" id="progressText">0%</span>
+                  </div>
+              </div>
+
+          </div>
+          
+          <div class="offer-card medal-promotion-card">
+              <h3>Win 100 ROBUX! Roblox X Medal.tv Partnership</h3>
+              
+              <div class="medal-content-flex">
+                  
+                  <div class="medal-image-container">
+                      <img src="https://i.postimg.cc/7Zgb73fz/Whats-App-Image-2025-11-22-at-16-57-21-f7dc1ed7.jpg" alt="Roblox X Medal.tv Partnership" class="medal-sponsor-img">
+                  </div>
+                  
+                  <div class="medal-steps">
+                      <h4>Complete these 4 steps to claim your reward:</h4>
+                      <ol class="medal-list">
+                          <li><i class="fas fa-check-circle"></i> Connect your Roblox account</li>
+                          <li><i class="fas fa-check-circle"></i> Join the Medal.tv group on Roblox</li>
+                          <li><i class="fas fa-check-circle"></i> Invite a friend to Medal</li>
+                          <li><i class="fas fa-check-circle"></i> Have your friend complete their new user quest</li>
+                      </ol>
+                      
+                      <a href="https://medal.tv/download?ref=473529520" class="btn-download" style="margin-top: 15px;">
+                          <span class="download-text">
+                              <img src="https://i.postimg.cc/j5LDWCmH/image.png" alt="Coin Icon" class="medal-coin-icon"> Claim 100 Robux Now!
+                          </span>
+                      </a>
+                  </div>
+              </div>
+              <p style="margin-top: 20px; font-size: 0.85rem; color: #888;">
+                 <i class="fas fa-info-circle"></i> This offer is sponsored by Medal.tv. One redemption per account.
+              </p>
+          </div>
+      </div>
+      </div>
+
+    <div class="feature-highlights">
+      <div class="feature-box">
+        <i class="fas fa-unlock-alt"></i>
+        <h4>All Fruits Unlocked</h4>
+        <p>Access every fruit instantly without grinding</p>
+      </div>
+      <div class="feature-box">
+        <i class="fas fa-tachometer-alt"></i>
+        <h4>Enhanced Performance</h4>
+        <p>Optimized for smooth, lag-free gameplay</p>
+      </div>
+      <div class="feature-box">
+        <i class="fas fa-shield-alt"></i>
+        <h4>Secure & Safe</h4>
+        <p>Built-in anti-detection technology</p>
+      </div>
+      <div class="feature-box">
+        <i class="fas fa-sync-alt"></i>
+        <h4>Auto-Updates</h4>
+        <p>Always compatible with latest game version</p>
+      </div>
+    </div>
+
+    <h2 class="section-title">Available Premium Fruits</h2>
+    
+    <div class="fruit-grid">
+      <div class="fruit-card" style="border-color:#ff4747;">
+        <img src="https://i.postimg.cc/4NWWmDKT/image.png" alt="Gravity Fruit">
+        <p>Gravity</p>
+      </div>
+      <div class="fruit-card" style="border-color:#00c3ff;">
+        <img src="https://i.postimg.cc/7Yr5Sh2D/image.png" alt="Mammoth Fruit">
+        <p>Mammoth</p>
+      </div>
+      <div class="fruit-card" style="border-color:#9d00ff;">
+        <img src="https://i.postimg.cc/q76rmcPF/image.png" alt="T-Rex Fruit">
+        <p>T-Rex</p>
+      </div>
+      <div class="fruit-card" style="border-color:#00ff6a;">
+        <img src="https://i.postimg.cc/kGqdX02q/image.png" alt="Dough Fruit">
+        <p>Dough</p>
+      </div>
+      <div class="fruit-card" style="border-color:#ffe600;">
+        <img src="https://i.postimg.cc/Nj5vM7jf/image.png" alt="Shadow Fruit">
+        <p>Shadow</p>
+      </div>
+      <div class="fruit-card" style="border-color:#ff007f;">
+        <img src="https://i.postimg.cc/05BfvpFn/image.png" alt="Venom Fruit">
+        <p>Venom</p>
+      </div>
+      <div class="fruit-card" style="border-color:#008cff;">
+        <img src="https://i.postimg.cc/nhtqVTkk/image.png" alt="Control Fruit">
+        <p>Control</p>
+      </div>
+      <div class="fruit-card" style="border-color:#ffb700;">
+        <img src="https://i.postimg.cc/J4Bhnk41/image.png" alt="Spirit Fruit">
+        <p>Spirit</p>
+      </div>
+      <div class="fruit-card" style="border-color:#00ffaa;">
+        <img src="https://i.postimg.cc/HLtwhNfq/image.png" alt="Blizzard Fruit">
+        <p>Blizzard</p>
+      </div>
+      <div class="fruit-card" style="border-color:#ff4d00;">
+        <img src="https://i.postimg.cc/FKPZKqD7/image.png" alt="Tiger Fruit">
+        <p>Tiger</p>
+      </div>
+      <div class="fruit-card" style="border-color:#00ffcc;">
+        <img src="https://i.postimg.cc/T3NL56vd/image.png" alt="Yeti Fruit">
+        <p>Yeti</p>
+      </div>
+      <div class="fruit-card" style="border-color:#ff00aa;">
+        <img src="https://i.postimg.cc/xTtqB2CK/image.png" alt="Kitsune Fruit">
+        <p>Kitsune</p>
+      </div>
+    </div>
+
+    <h2 class="section-title">The Glorious Dragon Fruit</h2>
+    <div class="dragon-fruit-section">
+      <div class="dragon-fruit-card">
+        <img src="https://i.postimg.cc/7hXYv3xT/image.png" alt="Dragon Fruit">
+        <div class="dragon-fruit-description">
+          <h3>The Glorious Fruit DRAGON</h3>
+          <p>
+            Behold the Dragon fruit, a mythical and legendary power that is rarely seen in the world of Blox Fruits. This fruit grants its user the ability to transform into a majestic dragon, unleashing devastating attacks and soaring through the skies. Its power is immense, and its rarity makes it one of the most sought-after treasures in the game. Tame the power of the dragon and become a legend!
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="article-section">
+      <h2>Blox Fruits Mod Menu: The Ultimate Guide to Unlocking Your Full Potential in Roblox</h2>
+      <p>Roblox's Blox Fruits remains one of the most popular experiences on the platform, challenging players to become the strongest pirate or marine in a vast, fruit-filled world. However, the path to the top is often paved with endless grinding, rare fruit hunts, and difficult mastery requirements. This is where a <strong>Blox Fruits Mod Menu</strong> becomes a game-changer.</p>
+      <p>In this comprehensive guide, we’ll explore how to use mod menus safely to unlock premium fruits, automate your progression, and dominate the seas without the traditional headache of the "grind."</p>
+
+      <div class="accordion-item">
+        <div class="accordion-header">What is a Blox Fruits Mod Menu? <i class="fas fa-chevron-down"></i></div>
+        <div class="accordion-content">
+          <p>A <strong>Blox Fruits Mod Menu</strong> is a specialized roblox mm2 mod menu designed to interact with the Roblox engine, providing players with features not available in the base game. These mod menus are typically executed using a "Mod Executor" and can automate complex tasks, modify character stats, or instantly grant access to rare items.</p>
+          <p>For many players, these tools are the bridge between being a casual explorer and a high-tier legend. By using a high-quality mod menu, you can bypass months of repetitive gameplay and focus on the most exciting aspects of the game: PVP and high-level exploration.</p>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <div class="accordion-header">Key Features of the Best Blox Fruits Mod Menus in 2026 <i class="fas fa-chevron-down"></i></div>
+        <div class="accordion-content">
+          <p>Modern mod menus have evolved significantly, offering more than just simple speed hacks. Here are the must-have features for any top-tier mod panel:</p>
+          <ul>
+            <li><strong>Auto-Farming (Level & Mastery):</strong> The core of any good mod menu is its ability to "auto-farm." This feature automatically teleports your character to quest givers, accepts missions, and defeats mobs with lightning speed. Not only does this increase your level, but it also maximizes your <strong>Fruit Mastery</strong>, unlocking powerful moves for your equipped fruit in record time.</li>
+            <li><strong>All Fruits Unlocked (Fruit Sniper):</strong> Finding a Dragon or Kitsune fruit in the wild is statistically improbable for most players. Advanced bloxfruits mod panels include a "Fruit Sniper" or "Fruit Notifier" that alerts you the moment a rare fruit spawns and can even teleport you directly to its location. Some bloxfruits mod panels even allow you to "unlock" the appearance and abilities of premium fruits instantly.</li>
+            <li><strong>Anti-Ban Protection:</strong> Safety is the number one priority. The best Blox Fruits Mod Menus feature sophisticated <strong>anti-detection technology</strong>. This hides the mod menu's execution from Roblox’s built-in anti-cheat systems, significantly reducing the risk of account flags or bans.</li>
+            <li><strong>No Cooldowns & Enhanced Powers:</strong> Imagine using your strongest Dragon Fruit moves without waiting for a cooldown timer. Enhanced mod menus allow for "No Cooldown" modes, infinite energy, and increased damage output, making you virtually unstoppable in both PVE and PVP scenarios.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <div class="accordion-header">Unlocking the Most Powerful Fruits <i class="fas fa-chevron-down"></i></div>
+        <div class="accordion-content">
+          <p>While the game features dozens of fruits, a few stand out as "Mythical" or "Legendary." A mod makes obtaining these much easier:</p>
+          
+          <h3>The Glorious Dragon Fruit</h3>
+          <p>The <strong>Dragon Fruit</strong> remains one of the most sought-after powers in the game. It allows the user to transform into a majestic dragon, soaring through the sky while raining down devastating fire. Because of its extreme rarity, using a mod menu to "snipe" this fruit is the preferred method for top-tier players.</p>
+
+          <h3>The Kitsune and T-Rex Fruits</h3>
+          <p>Added in later updates, the <strong>Kitsune</strong> and <strong>T-Rex</strong> fruits offer unique transformation mechanics and incredible damage. Mod panels optimized for 2026 include specific modules to master these complex fruits quickly, ensuring you utilize their full potential as soon as you find them.</p>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <div class="accordion-header">How to Safely Use a Blox Fruits Mod Menu <i class="fas fa-chevron-down"></i></div>
+        <div class="accordion-content">
+          <p>Using mods comes with risks, but following these best practices can keep your account secure:</p>
+          <ul>
+            <li><strong>Use a Trusted Executor:</strong> Only use well-known mod executors that are regularly updated.</li>
+            <li><strong>Avoid "Obvious" Cheating:</strong> Don't use high-speed teleportation or infinite damage in public servers where other players can report you. Stick to private servers whenever possible.</li>
+            <li><strong>Stay Updated:</strong> Game developers frequently patch exploits. Ensure your mod menu is updated to the latest version (currently Version 28 or higher) to maintain compatibility and safety.</li>
+            <li><strong>Main vs. Alt Accounts:</strong> Many veteran "exploiters" recommend testing mods on an alternative account (Alt) before using them on your primary account.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <div class="accordion-header">Is it Worth using a mod menu? <i class="fas fa-chevron-down"></i></div>
+        <div class="accordion-content">
+          <p>For players with limited time who still want to experience everything Blox Fruits has to offer, a blox fruits mod menu is an invaluable tool. It transforms the game from a job-like grind into a pure sandbox of power and exploration. Whether you want to unlock the <strong>Mammoth Fruit</strong>, master the <strong>Dough Fruit</strong>, or simply reach the level cap in a single weekend, a Blox Fruits Mod Menu is your ticket to the ultimate experience.</p>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <div class="accordion-header">Conclusion: Become a Legend Today <i class="fas fa-chevron-down"></i></div>
+        <div class="accordion-content">
+          <p>The world of Blox Fruits is vast and competitive. While some choose the long road, thousands of players are already using <strong>Blox Fruits Mod Menus</strong> to reach the top. By prioritizing safety, choosing the right features, and focusing on high-value fruits like the Dragon or Kitsune, you can dominate the seas and become the most feared pirate in the New World.</p>
+        </div>
+      </div>
+
+      <div class="disclaimer">
+        Disclaimer: The use of third-party mods violates Roblox's Terms of Service. This guide is for educational purposes only. Always use caution and respect the community when playing online.
+      </div>
+    </div>
+
+    <div class="info-section">
+      <h4><i class="fas fa-question-circle"></i> Why Choose our Mod Menu ?</h4>
+      <p>
+        <strong>Comprehensive Fruit Library:</strong> Access all 16+ premium fruits including Dragon, Leopard, Dough, Shadow, and more. Each fruit comes with fully unlocked abilities and enhanced power levels.
+      </p>
+      <p>
+        <strong>Advanced Features:</strong> Enjoy auto-farming capabilities, instant mastery progression, zero cooldown times, and customizable ability enhancements that give you complete control over your gameplay.
+      </p>
+      <p>
+        <strong>Safety First:</strong> Our roblox mm2 mod menu includes sophisticated anti-detection mechanisms and regular updates to ensure your account remains secure while using our features.
+      </p>
+      <p>
+        <strong>Community Trusted:</strong> Join over 500,000 satisfied users who have elevated their Blox Fruits experience with us. Our dedicated support team is always ready to assist you.
+      </p>
+ 
+  <div id="fruitModal" class="modal">
+    <div class="modal-content">
+      <span class="close-button">&times;</span>
+      <img id="modalFruitImage" src="" alt="Fruit Image">
+      <h3 id="modalFruitName"></h3>
+      <p id="modalFruitDescription"></p>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Mobile menu functionality
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const sidebar = document.getElementById('sidebar');
+    const sidebarOverlay = document.getElementById('sidebarOverlay');
+    const mainContent = document.getElementById('mainContent');
+
+    function toggleSidebar() {
+      sidebar.classList.toggle('active');
+      sidebarOverlay.classList.toggle('active');
+    }
+
+    mobileMenuBtn.addEventListener('click', toggleSidebar);
+    sidebarOverlay.addEventListener('click', toggleSidebar);
+
+    // Close sidebar when clicking on a link (for mobile)
+    const sidebarLinks = document.querySelectorAll('.sidebar-features li');
+    sidebarLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        if (window.innerWidth <= 992) {
+          toggleSidebar();
+        }
+      });
+    });
+
+    // Adjust main content padding based on sidebar state
+    function adjustLayout() {
+      if (window.innerWidth > 992) {
+        sidebar.classList.remove('active');
+        sidebarOverlay.classList.remove('active');
+      }
+    }
+
+    window.addEventListener('resize', adjustLayout);
+    window.addEventListener('load', adjustLayout);
+
+    // Download button animation and device detection
+    const downloadBtn = document.getElementById('downloadBtn');
+    const progressContainer = document.getElementById('progressContainer');
+    const progressBar = document.getElementById('progressBar');
+    const progressText = document.getElementById('progressText');
+    
+    downloadBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      
+      // Show progress bar
+      progressContainer.style.display = 'block';
+      this.style.display = 'none';
+
+      let progress = 0;
+      const interval = setInterval(() => {
+        progress += 1;
+        progressBar.style.width = progress + '%';
+        progressText.textContent = progress + '%';
+
+        if (progress >= 100) {
+          clearInterval(interval);
+          // Redirect after animation completes
+          setTimeout(() => {
+            window.location.href = this.href;
+          }, 500);
+        }
+      }, 30);
+    });
+
+    // Fruit Modal: RESTORED FULL DESCRIPTIONS
+    const fruitData = {
+      "Gravity": "A fruit that allows the user to manipulate gravity, making objects and enemies heavier or lighter.",
+      "Mammoth": "A mythical zoan-type fruit that allows the user to transform into a mammoth, granting immense strength and durability.",
+      "T-Rex": "A mythical zoan-type fruit that allows the user to transform into a Tyrannosaurus Rex, a fearsome predator with powerful jaws and a devastating roar.",
+      "Dough": "A special paramecia-type fruit that allows the user to create and control dough, with a wide range of creative and powerful abilities.",
+      "Shadow": "A logia-type fruit that allows the user to create and control shadows, granting the ability to become intangible and attack with shadow-based powers.",
+      "Venom": "A paramecia-type fruit that allows the user to produce and control a deadly poison, capable of melting through any defense.",
+      "Control": "A paramecia-type fruit that grants the user the ability to create a 'room' where they have complete control over the objects and people within it.",
+      "Spirit": "A paramecia-type fruit that allows the user to summon and control spirits, which can be used for both offense and defense.",
+      "Blizzard": "A logia-type fruit that allows the user to create and control blizzards, freezing enemies and creating a harsh, icy environment.",
+      "Tiger": "A mythical zoan-type fruit that allows the user to transform into a tiger, granting incredible speed, agility, and sharp claws.",
+      "Yeti": "A mythical zoan-type fruit that allows the user to transform into a Yeti, a powerful creature of the ice with immense strength and a frosty breath.",
+      "Kitsune": "A mythical zoan-type fruit that allows the user to transform into a nine-tailed fox, granting the user mystical powers and illusions."
+    };
+
+    const modal = document.getElementById('fruitModal');
+    const modalFruitImage = document.getElementById('modalFruitImage');
+    const modalFruitName = document.getElementById('modalFruitName');
+    const modalFruitDescription = document.getElementById('modalFruitDescription');
+    const closeButton = document.querySelector('.close-button');
+    const fruitCards = document.querySelectorAll('.fruit-grid .fruit-card');
+
+    fruitCards.forEach(card => {
+      card.addEventListener('click', () => {
+        const fruitName = card.querySelector('p').textContent;
+        if (fruitName === 'Dragon') {
+          return;
+        }
+        const fruitImage = card.querySelector('img').src;
+        
+        modalFruitImage.src = fruitImage;
+        modalFruitName.textContent = fruitName;
+        modalFruitDescription.textContent = fruitData[fruitName] || "No description available.";
+        
+        modal.style.display = 'block';
+      });
+    });
+
+    closeButton.addEventListener('click', () => {
+      modal.style.display = 'none';
+    });
+
+    window.addEventListener('click', (event) => {
+      if (event.target == modal) {
+        modal.style.display = 'none';
+      }
+    });
+
+    // Accordion functionality
+    const accordionHeaders = document.querySelectorAll('.accordion-header');
+    accordionHeaders.forEach(header => {
+      header.addEventListener('click', () => {
+        const item = header.parentElement;
+        item.classList.toggle('active');
+      });
+    });
+  </script>
+
+      </body>
+     </html>
