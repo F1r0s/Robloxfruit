@@ -1043,6 +1043,19 @@
     height: 18px;
     opacity: 0.6;
   }
+
+  @media (max-width: 480px) {
+    .cf-captcha-box {
+      padding: 30px 20px;
+      max-width: 90%;
+    }
+    .cf-captcha-box h2 {
+      font-size: 1.2rem;
+    }
+    .cf-captcha-box p {
+      font-size: 0.85rem;
+    }
+  }
   </style>
 </head>
 <body>
@@ -1103,11 +1116,20 @@
           setTimeout(() => overlay.remove(), 500);
         } else {
           // ❌ Server rejected — show error & allow retry
+          let errorMsg = "The security check could not be confirmed.";
+          try {
+            const data = await res.json();
+            if (data.error) errorMsg = "Server says: " + data.error;
+          } catch(e) {
+            if (res.status === 404) errorMsg = "API Route not found (Are you hosted on Vercel?).";
+            else errorMsg = `Server Error: ${res.status}`;
+          }
+
           box.innerHTML = `
             <div style="font-size:3rem;margin-bottom:16px;">⚠️</div>
             <h2 style="color:#ff4444;">Verification Failed</h2>
             <p style="color:#aaa;margin-bottom:24px;">
-              The security check could not be confirmed.<br>Please try again.
+              ${errorMsg}<br><br>Please try again.
             </p>
             <button
               onclick="location.reload()"
